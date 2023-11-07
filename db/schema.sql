@@ -9,7 +9,7 @@ name TEXT NOT NULL,
 is_favorite BOOLEAN NOT NULL,
 genre TEXT DEFAULT NULL,
 storyline TEXT DEFAULT NULL,
-video_id VARCHAR(6) DEFAULT NULL,
+video_id VARCHAR(12) DEFAULT NULL,
 image_id TEXT DEFAULT NULL,
 cost INT NOT NULL
 ); 
