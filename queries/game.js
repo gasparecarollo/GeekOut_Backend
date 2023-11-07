@@ -21,6 +21,19 @@ const getGame = async (id) => {
     }
 
 }
+
+const createGame = async (game) => {
+
+    try {
+        const newGame = await db.one("INSERT INTO games (name, is_favorite, genre, storyline, video_id, image_id, cost) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [game.name, game.is_favorite, game.genre, game.storyline, game.video_id, game.image_id, game.cost]
+        )
+        return newGame
+    } catch (error) {
+
+        return error;
+    }
+}
+
 const deleteGame = async (id) => {
     try {
         const deletedGame = await db.one("DELETE FROM songs WHERE ID = $1 RETURNING *", id)

@@ -6,6 +6,6 @@ const PORT = process.env.PORT;
 
 
 //LISTENING
-application.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Gamers ready on PORT:${PORT}`)
 })

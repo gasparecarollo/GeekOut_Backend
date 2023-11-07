@@ -1,8 +1,7 @@
 const express = require('express');
 const games = express.Router();
-
-const { getAllGames, getGame, createGame, deleteGame, updateGame } = require('../queries/game')
-
+const { getAllGames, getGame, createGame, deleteGame, updateGame } = require('../queries/game');
+const { checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_id, checkImage_id, checkCost } = require('../validations/checkGames');
 
 games.get('/', async (req, res) => {
     const allGames = await getAllGames
@@ -27,7 +26,7 @@ games.get('/:id', async (req, res) => {
     }
 });
 
-games.post('/', async (res, req) => {
+games.post('/', checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_id, checkImage_id, checkCost, async (res, req) => {
     const body = req.body;
     const game = await createGame(body)
 
@@ -46,19 +45,19 @@ games.delete('/:id', async (req, res) => {
     }
 })
 
-games.put('/:id', async (req, res) => {
+games.put('/:id', checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_id, checkImage_id, checkCost, async (req, res) => {
     const id = req.params.id;
     const body = req.body;
     const updatedGame = await updateGame(id, body)
 
+    if (updatedGame.id) {
+        res.status(200).json(updatedGame)
+
+    } else {
+
+        res.status(404).json({ error: "Game not found" })
+    }
+
 })
-
-if (updatedGame.id) {
-    res.status(200).json(updatedGame)
-
-} else {
-
-    res.status(404).json({ error: "Game not found" })
-}
 
 module.exports = games;

@@ -2,11 +2,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const gameController = require('./controllers/gameController');
 
 //MIDDLEWARE
 app.use(cors());
 app.use(express.json());
-app.use('/games')
+app.use('/games', gameController)
 
 
 //ROUTES
@@ -17,3 +18,5 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.status(404).send("Nadda")
 })
+
+module.exports = app;
