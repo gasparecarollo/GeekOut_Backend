@@ -25,7 +25,7 @@ const getGame = async (id) => {
 const createGame = async (game) => {
 
     try {
-        const newGame = await db.one("INSERT INTO games (name, is_favorite, genre, storyline, video_id, image_id, cost) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [game.name, game.is_favorite, game.genre, game.storyline, game.video_id, game.image_id, game.cost]
+        const newGame = await db.one("INSERT INTO games (name, is_favorite, genre, storyline, video_id, image_id, cost) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *", [game.name, game.is_favorite, game.genre, game.storyline, game.video_id, game.image_id, game.cost]
         )
         return newGame
     } catch (error) {

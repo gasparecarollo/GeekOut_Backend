@@ -4,7 +4,7 @@ const { getAllGames, getGame, createGame, deleteGame, updateGame } = require('..
 const { checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_id, checkImage_id, checkCost } = require('../validations/checkGames');
 
 games.get('/', async (req, res) => {
-    const allGames = await getAllGames
+    const allGames = await getAllGames();
 
     if (allGames[0]) {
         res.status(200).json(allGames)
@@ -26,7 +26,7 @@ games.get('/:id', async (req, res) => {
     }
 });
 
-games.post('/', checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_id, checkImage_id, checkCost, async (res, req) => {
+games.post('/', checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_id, checkImage_id, checkCost, async (req, res) => {
     const body = req.body;
     const game = await createGame(body)
 
