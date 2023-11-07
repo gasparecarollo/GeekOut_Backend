@@ -30,7 +30,7 @@ games.post('/', checkName, checkBoolean, checkGenre, checkStoryline, checkVideo_
     const body = req.body;
     const game = await createGame(body)
 
-    res.json
+    res.json(game)
 })
 
 games.delete('/:id', async (req, res) => {
