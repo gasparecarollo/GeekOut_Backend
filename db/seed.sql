@@ -18,7 +18,7 @@ Action-adventure', 'Together with Farah, a young Princess who knows the power of
 
 ('Maniac Mansion', TRUE, 'Graphic Adventure', 'Maniac Mansion is a graphic adventure game in which the player uses a point-and-click interface to guide characters through a two-dimensional game world and to solve puzzles.', 'wH_GX_w4rK4', 'image_id_11', 24),
 
-('ICO', TRUE, 'Action-Adventure', 'Ico is primarily a three-dimensional platform game. The player controls Ico from a third-person perspective as he explores the castle and attempts to escape it with Yorda.', 'JBm-RRm6-TQ_id_11', 'image_id_11', 23),
+('ICO', TRUE, 'Action-Adventure', 'Ico is primarily a three-dimensional platform game. The player controls Ico from a third-person perspective as he explores the castle and attempts to escape it with Yorda.', 'JBm-RRm6-TQ', 'image_id_11', 23),
 
 ('Zombies Ate My Neighbors', TRUE, 'Run and Gun',  'Zeke and Julie, equipped with a variety of weapons and power-ups, go on a quest to rescue their neighbors from monsters often seen in horror movies.', 'jbsreeNpBHo', 'image_id_11', 16),
 
