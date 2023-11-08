@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS games_dev; /* he structure of the database. It defines how data is organized and how relationships among data are handled. A schema defines the tables, fields, data types, relationships, and constraints in a database.  */
+DROP DATABASE IF EXISTS games_dev; 
 CREATE DATABASE games_dev;
 
 \c games_dev;
