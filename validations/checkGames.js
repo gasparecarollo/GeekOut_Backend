@@ -15,6 +15,11 @@ const checkBoolean = (req, res, next) => {
     const fav = req.body.is_favorite;
 
     if (typeof fav === "boolean") {
+        if(fav === "true"){
+            req.body.is_favorite = true
+        }else{
+            req.body.is_favorite = false
+        }
         next()
     } else {
         res.status(400).json({ error: "is_favorite must be a boolean" })
@@ -65,7 +70,7 @@ const checkImage_id = (req, res, next) => {
 const checkCost = (req, res, next) => {
     const cost = req.body.cost;
 
-    if (typeof cost === "number") {
+    if (cost > 0) {
         next()
     } else {
         res.status(400).json({ error: "Cost must be an number" })
