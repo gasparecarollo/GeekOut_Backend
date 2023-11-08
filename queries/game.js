@@ -36,7 +36,7 @@ const createGame = async (game) => {
 
 const deleteGame = async (id) => {
     try {
-        const deletedGame = await db.one("DELETE FROM songs WHERE ID = $1 RETURNING *", id)
+        const deletedGame = await db.one("DELETE FROM games WHERE id = $1 RETURNING *", id)
 
         return deletedGame
     } catch (error) {

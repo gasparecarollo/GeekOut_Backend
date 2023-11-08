@@ -45,30 +45,30 @@ const checkStoryline = (req, res, next) => {
 const checkVideo_id = (req, res, next) => {
     const video_id = req.body.video_id;
 
-    if (typeof video_id === "number" && video_id.length <= 12) {
+    if (typeof video_id === "string" && video_id.length <= 12) {
         next()
     } else {
-        res.status(400).json({ error: "Video_id must be a number" })
+        res.status(400).json({ error: "Video_id must be a String" })
     }
 }
 
 const checkImage_id = (req, res, next) => {
     const image_id = req.body.video_id;
 
-    if (typeof image_id === "number") {
+    if (typeof image_id === "string") {
         next()
     } else {
-        res.status(400).json({ error: "Image_id must be a number" })
+        res.status(400).json({ error: "Image_id must be a URL" })
     }
 }
 
 const checkCost = (req, res, next) => {
     const cost = req.body.cost;
 
-    if (typeof cost === INT) {
+    if (typeof cost === "number") {
         next()
     } else {
-        res.status(400).json({ error: "Cost must be an integer" })
+        res.status(400).json({ error: "Cost must be an number" })
     }
 }
 
