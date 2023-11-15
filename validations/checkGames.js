@@ -15,9 +15,9 @@ const checkBoolean = (req, res, next) => {
     const fav = req.body.is_favorite;
 
     if (typeof fav === "boolean") {
-        if(fav === "true"){
+        if (fav === "true") {
             req.body.is_favorite = true
-        }else{
+        } else {
             req.body.is_favorite = false
         }
         next()
@@ -63,7 +63,7 @@ const checkImage_id = (req, res, next) => {
     if (typeof image_id === "string") {
         next()
     } else {
-        res.status(400).json({ error: "Image_id must be a URL" })
+        res.status(400).json({ error: "Image_id must be a String" })
     }
 }
 
